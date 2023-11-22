@@ -1,0 +1,71 @@
+.lab5 {
+
+    gap: 2rem;
+
+    .title {
+        margin-bottom: 4rem;
+    }
+
+    .switch {
+        --slider-width: 4rem;
+        --slider-height: 2rem;
+        position: relative;
+        display: inline-block;
+        width: var(--slider-width);
+        height: var(--slider-height);
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        inset: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 1rem;
+    }
+
+    .slider:before {
+        --gap: 4px;
+        position: absolute;
+        content: "";
+        border-radius: 50%;
+        aspect-ratio: 1;
+        left: var(--gap);
+        bottom: var(--gap);
+        top: var(--gap);
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider[data-checked="true"] {
+        background-color: #2196F3;
+    }
+
+    .slider[data-checked="true"]:hover {
+        // box-shadow: 0 0 1px 1px #2195f3a3;
+    }
+
+    .slider[data-checked="true"]::before {
+        transform: translateX(calc(var(--slider-width) - var(--slider-height)));
+    }
+
+    .lab5-row {
+        display: flex;
+        gap: 2rem;
+        flex-direction: row;
+        align-items: center;
+
+        span {
+            font-size: 1.2rem;
+        }
+    }
+
+}

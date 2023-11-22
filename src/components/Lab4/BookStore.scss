@@ -1,0 +1,80 @@
+.book-store {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    .slider {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .bookshelf {
+        // background-color: rgb(249, 252, 255);
+        border-radius: 1rem;
+
+        .carousel-slide-body {
+            display: flex;
+            position: sticky;
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .carousel-control-prev-icon {}
+
+        .bookshelf-title {}
+
+        .bookshelf-body {
+            display: grid;
+            grid-template-columns: repeat(var(--n-books), 1fr);
+            gap: 1rem;
+            overflow: auto;
+            padding: 0.5rem;
+
+            .book-card {
+                display: flex;
+                flex-direction: column;
+                // gap: 0.5rem;
+                justify-content: space-between;
+                text-align: center;
+
+
+                .book-image {
+                    height: 400px;
+                    object-fit: contain;
+                }
+
+                .book-title {
+                    font-size: 1.2em;
+                }
+
+                .book-author {
+                    color: gray;
+                }
+
+                .book-price {
+                    font-size: 1.3em;
+                }
+
+                .book-price::after {
+                    content: "₽";
+                }
+
+                button.book-to-cart {
+                    background-color: rgb(255, 174, 23);
+                    color: white;
+                    transition: scale 0.2s;
+                }
+
+                button.book-to-cart:hover {
+                    scale: 1.05;
+                }
+            }
+        }
+    }
+}
