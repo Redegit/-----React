@@ -42,7 +42,7 @@ export const Header = () => {
     return (
         <header className="bg-light">
             <nav className="container navbar navbar-expand-lg navbar-light container">
-                <ul className="navbar-nav mr-auto gap-3">
+                <ul className="navbar-nav mr-auto gap-3 flex-wrap flex-row">
                     {!navLinks.empty && navLinks.map((obj, index) => {
                         if (obj.children) {
                             return <DropdownLink obj={obj} key={index} />
