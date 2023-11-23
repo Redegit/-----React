@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 
-export const Switcher = ({ index, cb, toggler }) => {
+export const Switcher = ({ index, cb, toggler, setPrevChanged }) => {
     const [checked, setChecked] = useState(false)
 
     const handleChange = () => {
         cb(index, !checked);
         setChecked(!checked);
+        setPrevChanged(index);
     }
 
     useEffect(() => {
         if (toggler.includes(index)) {
-            handleChange();
+            cb(index, !checked);
+            setChecked(!checked);
         };
     }, [toggler]);
 

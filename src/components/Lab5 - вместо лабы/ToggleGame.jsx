@@ -31,7 +31,6 @@ export const ToggleGame = () => {
         setSwitchStates(prevState => {
             return { ...prevState, [index]: value };
         });
-        setPreviousChangedIndex(index);
     }
 
     useEffect(() => {
@@ -44,8 +43,19 @@ export const ToggleGame = () => {
                 disabledList.push(key)
             }
         }
-        if (enabledList.length === 0) { setForceSwitchToggleIndex(randomChoose(disabledList, randInt(2, 3)).filter(n => n !== previousChangedIndex)) }
-        if (disabledList.length === 0) { setForceSwitchToggleIndex(randomChoose(enabledList, randInt(2, SWITCH_COUNT - 1)).filter(n => n !== previousChangedIndex)) }
+
+        console.log(previousChangedIndex);
+        if (enabledList.length === 0 || disabledList.length === 0) {
+            if (enabledList.length === 0) { setForceSwitchToggleIndex(randomChoose(disabledList, randInt(2, 3)).filter(n => n !== previousChangedIndex)) }
+            if (disabledList.length === 0) { setForceSwitchToggleIndex(randomChoose(enabledList, randInt(2, SWITCH_COUNT - 1)).filter(n => n !== previousChangedIndex)) }
+        } else {
+            if (disabledList.length > enabledList.length) {
+                setForceSwitchToggleIndex(randomChoose(disabledList, randInt(0, Math.min(2, disabledList.length - 1))).filter(n => n !== previousChangedIndex))
+            } else {
+                setForceSwitchToggleIndex(randomChoose(enabledList, randInt(0, Math.min(2, enabledList.length - 1))).filter(n => n !== previousChangedIndex))
+            }
+        }
+
     }, [switchStates]);
 
     return (
@@ -59,6 +69,7 @@ export const ToggleGame = () => {
                             index={index}
                             cb={handleSwitcherChange}
                             toggler={forceSwitchToggleIndex}
+                            setPrevChanged={setPreviousChangedIndex}
                         />
                     </div>
                 )
