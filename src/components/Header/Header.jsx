@@ -33,6 +33,10 @@ export const Header = () => {
             path: 'toggle',
             name: 'Вместо лабы 5'
         },
+        {
+            path: 'store/home',
+            name: 'Лабораторная 6'
+        },
     ]
 
     return (

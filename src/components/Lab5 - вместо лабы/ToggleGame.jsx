@@ -8,6 +8,7 @@ export const ToggleGame = () => {
     const [switchList, setSwitchList] = useState([]);
     const [switchStates, setSwitchStates] = useState(Object.fromEntries(Array.from({ length: SWITCH_COUNT }, (_, i) => [i, false])));
     const [forceSwitchToggleIndex, setForceSwitchToggleIndex] = useState([]);
+    const [previousChangedIndex, setPreviousChangedIndex] = useState(0);
 
 
     useEffect(() => {
@@ -27,7 +28,10 @@ export const ToggleGame = () => {
     }, []);
 
     const handleSwitcherChange = (index, value) => {
-        setSwitchStates({ ...switchStates, [index]: value })
+        setSwitchStates(prevState => {
+            return { ...prevState, [index]: value };
+        });
+        setPreviousChangedIndex(index);
     }
 
     useEffect(() => {
@@ -40,14 +44,8 @@ export const ToggleGame = () => {
                 disabledList.push(key)
             }
         }
-
-        if (enabledList.length === 0) { setForceSwitchToggleIndex(randomChoose(disabledList, randInt(1, 3))) }
-
-        // if (Math.random() >= 0.05) {
-
-        // }
-        // console.log();
-
+        if (enabledList.length === 0) { setForceSwitchToggleIndex(randomChoose(disabledList, randInt(2, 3)).filter(n => n !== previousChangedIndex)) }
+        if (disabledList.length === 0) { setForceSwitchToggleIndex(randomChoose(enabledList, randInt(2, SWITCH_COUNT - 1)).filter(n => n !== previousChangedIndex)) }
     }, [switchStates]);
 
     return (
