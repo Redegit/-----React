@@ -14,11 +14,11 @@ const Item = ({ item }) => {
     }
 
     return (
-        <div className="item">
+        <div className="glass-card item">
             <Link to={`/store/item/${item.id}`}>
                 <img className="grid_image" src={item.img} alt={item.name} />
-                <div>{item.name}</div>
             </Link>
+            <div className="name" >{item.name}</div>
             {isOnCart ?
                 <button className="grid-item-button">В корзине</button>
                 : <button className="grid-item-button enabled" onClick={handleAddItem}>Добавить в корзину</button>

@@ -27,8 +27,8 @@ export const Calculator = () => {
     const buttons = ['C', '*', '%', '/', 1, 2, 3, '-', 4, 5, 6, '+', 7, 8, 9, '=', '.', 0]
 
     return (
-        <div className="container d-flex justify-content-center align-items-center">
-            <div className="calculator">
+        <div className="mt-5 d-flex justify-content-center align-items-center">
+            <div className="calculator glass-card">
                 <div className="display">
                     {displayValue}
                 </div>

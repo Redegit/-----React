@@ -1,0 +1,20 @@
+.person-table {
+    padding: 1rem;
+    border-collapse: separate;
+    border-radius: 1rem;
+    display: block;
+    max-width: 100%;
+    overflow: auto;
+
+    input {
+        background-color: #ffffff90;
+        border: 1px solid gray;
+        border-radius: .5rem;
+        padding-left: 1ch;
+        padding-right: 1ch;
+    }
+
+    th {
+        text-align: center;
+    }
+}

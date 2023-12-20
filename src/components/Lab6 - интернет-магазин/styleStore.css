@@ -5,6 +5,11 @@
 	--active_bg: rgb(255, 244, 232);
 }
 
+a {
+	text-decoration: unset;
+	color: black;
+}
+
 .small_header {
 	font-size: 18px;
 	background-color: #eaeaea;
@@ -63,11 +68,17 @@ body {
 }
 
 .item {
-	/* width: 300px; */
-	/* height: 200px; */
 	padding: 0.5em;
 	display: flex;
 	flex-direction: column;
+	gap: 0.5rem;
+	border-radius: 1rem;
+	justify-content: space-between;
+}
+
+.item .name {
+	text-align: center;
+	font-weight: 500;
 }
 
 .grid_image {
@@ -79,28 +90,16 @@ body {
 }
 
 .item:hover {
-	background-color: rgb(251, 238, 224);
+	background-color: #ffffffc0;
 	color: black;
 	border-radius: 0.5em;
 }
 
-.item a {
-	display: flex;
-	width: 300px;
-	height: 200px;
-	flex-direction: column;
-	justify-content: space-between;
-
-}
 
 a {
 	font-size: 18px;
 	font-weight: bold;
-	color: black;
-	text-decoration: unset;
-	text-align: center;
 }
-
 
 .header {
 	background: var(--main-color);
@@ -112,8 +111,6 @@ a {
 	border-bottom-right-radius: 2em;
 	text-align: center;
 	max-height: fit-content;
-	position: sticky;
-	top: 0;
 }
 
 #header_inner {
@@ -390,7 +387,7 @@ a {
 .grid-item-button {
 	border-radius: 0.5rem;
 	background-color: rgb(255, 214, 137);
-
+	cursor: default;
 	border: none;
 	font-size: 1em;
 	font-weight: 400;
@@ -405,4 +402,5 @@ a {
 .enabled:hover {
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.251);
 	scale: 1.05;
+	cursor: pointer;
 }

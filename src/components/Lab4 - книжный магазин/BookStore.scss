@@ -3,6 +3,13 @@
     flex-direction: column;
     gap: 3rem;
 
+    .book-store-title {
+        margin-top: 3rem;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
     .slider {
         width: fit-content;
         display: flex;
@@ -12,8 +19,9 @@
     }
 
     .bookshelf {
-        // background-color: rgb(249, 252, 255);
+        background-color: rgb(249, 252, 255);
         border-radius: 1rem;
+        padding: 2rem;
 
         .carousel-slide-body {
             display: flex;

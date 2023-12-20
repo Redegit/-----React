@@ -2,7 +2,7 @@ import { Carousel } from "react-bootstrap"
 
 export const BookCarousel = ({ slides, title }) => {
     return (
-        <div className="bookshelf slider">
+        <div className="bookshelf glass-card slider">
             <h2 className="bookshelf-title text-center mb-4">{title}</h2>
             <Carousel>
                 {slides && slides.map((slide, index) => {

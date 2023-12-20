@@ -5,8 +5,8 @@ import './BookStore.scss'
 export const BookStore = () => {
 
     return (
-        <div className="container book-store mb-5">
-            <h2 className="book-store-title text-center mt-5">Книжный магазин</h2>
+        <div className="book-store">
+            <h2 className="glass-card book-store-title">Книжный магазин</h2>
             <BookCarousel slides={booksCarousel} title={"Новинки"} />
             <Bookshelf books={books1} title={"Популярное"} />
             <Bookshelf books={books2} title={"Топ продаж"} />

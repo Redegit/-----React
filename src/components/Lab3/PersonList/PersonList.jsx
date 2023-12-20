@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { personList } from "../../../classes/Person";
 
+import "./person_list.scss"
 
 export const PersonList = () => {
     const [scientists, setScientists] = useState(personList)
@@ -38,8 +39,8 @@ export const PersonList = () => {
     }
 
     return (
-        <div className="container">
-            <table className="person-table table">
+        <>
+            <table className="person-table mt-5 glass-card">
                 <thead>
                     <tr>
                         {!keyList.empty && keyList.map((key, index) =>
@@ -75,6 +76,6 @@ export const PersonList = () => {
                     })}
                 </tbody>
             </table>
-        </div>
+        </>
     );
 }

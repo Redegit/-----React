@@ -5,7 +5,11 @@ export const PageWrapper = () => {
     return (
         <>
             <Header />
-            <Outlet />
+            <div className="bubble1"></div>
+            <div className="bubble2"></div>
+            <div className="container">
+                <Outlet />
+            </div>
         </>
     )
 }

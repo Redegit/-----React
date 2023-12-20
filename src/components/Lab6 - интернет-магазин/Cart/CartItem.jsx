@@ -29,7 +29,7 @@ const CartItem = ({ item_info }) => {
     const product = data_products.find(prod => id === String(prod.id))
     return (
         <>
-            {!deleted && <div className="cart_item">
+            {!deleted && <div className="glass-card cart_item">
                 <img src={product.img} alt={product.name} />
                 <div className="desc_block">
                     <div className="name">{product.name}</div>

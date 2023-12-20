@@ -37,11 +37,32 @@ export const Header = () => {
             path: 'store/home',
             name: 'Лабораторная 6'
         },
+        {
+            name: 'Лабораторная 7',
+            children: [
+                {
+                    path: '/attendance',
+                    name: 'Список студентов'
+                },
+                // {
+                //     path: '/button',
+                //     name: 'Кнопка'
+                // },
+                {
+                    path: '/clock',
+                    name: 'Часы'
+                },
+            ]
+        },
+        {
+            path: '/lab8',
+            name: 'Лабораторная 8'
+        },
     ]
 
     return (
-        <header className="bg-light">
-            <nav className="container navbar navbar-expand-lg navbar-light container">
+        <header className="glass-card">
+            <nav className="container navbar navbar-expand-lg">
                 <ul className="navbar-nav mr-auto gap-3 flex-wrap flex-row">
                     {!navLinks.empty && navLinks.map((obj, index) => {
                         if (obj.children) {

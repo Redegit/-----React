@@ -16,11 +16,10 @@ const ItemPage = () => {
     return (<div>
         <StoreHeader />
 
-        <div className="container">
             <div className="item_page">
-                <img className="big_image" src={item.img} alt={item.name} />
-                <div className="name">{item.name}</div>
-                <div onClick={toggleDescShow}>
+                <img className="glass-card big_image" src={item.img} alt={item.name} />
+                <div className="glass-card name">{item.name}</div>
+                <div className="glass-card" onClick={toggleDescShow}>
                     <div className="show-description-btn">{showDesc ? "Свернуть описание" : "Развернуть описание"}</div>
                     {showDesc &&
                         <div className="description">
@@ -29,7 +28,6 @@ const ItemPage = () => {
                     }
                 </div>
             </div>
-        </div>
     </div>);
 }
 

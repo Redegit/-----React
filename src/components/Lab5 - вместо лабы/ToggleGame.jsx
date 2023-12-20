@@ -59,7 +59,7 @@ export const ToggleGame = () => {
     }, [switchStates]);
 
     return (
-        <div className="container d-flex justify-content-center align-items-center flex-column mt-5 lab5">
+        <div className="p-5 glass-card d-flex justify-content-center align-items-center flex-column mt-5 lab5">
             <h2 className="title">Ой, что-то сломалось!</h2>
             {!switchList.empty && switchList.map((item, index) => {
                 return (
